@@ -17,8 +17,5 @@ namespace API.Data
     public DbSet<Artist> Artist { get; set; }
     public DbSet<Genre> Genre { get; set; }
     public DbSet<Song> Song { get; set; }
-    public DbSet<UserArtist> UserArtist { get; set; }
-    public DbSet<UserGenre> UserGenre { get; set; }
-    public DbSet<UserSong> UserSong { get; set; }
   }
 }

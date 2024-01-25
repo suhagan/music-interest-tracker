@@ -103,85 +103,61 @@ namespace API.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("API.Models.UserArtist", b =>
+            modelBuilder.Entity("ArtistUser", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("ArtistsId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ArtistId")
+                    b.Property<int>("UsersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.HasKey("ArtistsId", "UsersId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("UsersId");
 
-                    b.HasIndex("ArtistId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserArtist");
+                    b.ToTable("ArtistUser");
                 });
 
-            modelBuilder.Entity("API.Models.UserGenre", b =>
+            modelBuilder.Entity("GenreUser", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("GenresId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("GenreId")
+                    b.Property<int>("UsersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.HasKey("GenresId", "UsersId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("UsersId");
 
-                    b.HasIndex("GenreId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserGenre");
+                    b.ToTable("GenreUser");
                 });
 
-            modelBuilder.Entity("API.Models.UserSong", b =>
+            modelBuilder.Entity("SongUser", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("SongsId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("SongId")
+                    b.Property<int>("UsersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.HasKey("SongsId", "UsersId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("UsersId");
 
-                    b.HasIndex("SongId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserSong");
+                    b.ToTable("SongUser");
                 });
 
             modelBuilder.Entity("API.Models.Song", b =>
                 {
                     b.HasOne("API.Models.Artist", "Artist")
-                        .WithMany()
+                        .WithMany("Songs")
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("API.Models.Genre", "Genre")
-                        .WithMany()
+                        .WithMany("Songs")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -191,61 +167,59 @@ namespace API.Migrations
                     b.Navigation("Genre");
                 });
 
-            modelBuilder.Entity("API.Models.UserArtist", b =>
+            modelBuilder.Entity("ArtistUser", b =>
                 {
-                    b.HasOne("API.Models.Artist", "Artist")
+                    b.HasOne("API.Models.Artist", null)
                         .WithMany()
-                        .HasForeignKey("ArtistId")
+                        .HasForeignKey("ArtistsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("API.Models.User", "User")
+                    b.HasOne("API.Models.User", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Artist");
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("API.Models.UserGenre", b =>
+            modelBuilder.Entity("GenreUser", b =>
                 {
-                    b.HasOne("API.Models.Genre", "Genre")
+                    b.HasOne("API.Models.Genre", null)
                         .WithMany()
-                        .HasForeignKey("GenreId")
+                        .HasForeignKey("GenresId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("API.Models.User", "User")
+                    b.HasOne("API.Models.User", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Genre");
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("API.Models.UserSong", b =>
+            modelBuilder.Entity("SongUser", b =>
                 {
-                    b.HasOne("API.Models.Song", "Song")
+                    b.HasOne("API.Models.Song", null)
                         .WithMany()
-                        .HasForeignKey("SongId")
+                        .HasForeignKey("SongsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("API.Models.User", "User")
+                    b.HasOne("API.Models.User", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
 
-                    b.Navigation("Song");
+            modelBuilder.Entity("API.Models.Artist", b =>
+                {
+                    b.Navigation("Songs");
+                });
 
-                    b.Navigation("User");
+            modelBuilder.Entity("API.Models.Genre", b =>
+                {
+                    b.Navigation("Songs");
                 });
 #pragma warning restore 612, 618
         }
