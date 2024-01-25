@@ -76,82 +76,86 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserArtist",
+                name: "ArtistUser",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    ArtistId = table.Column<int>(type: "int", nullable: false)
+                    ArtistsId = table.Column<int>(type: "int", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserArtist", x => x.Id);
+                    table.PrimaryKey("PK_ArtistUser", x => new { x.ArtistsId, x.UsersId });
                     table.ForeignKey(
-                        name: "FK_UserArtist_Artist_ArtistId",
-                        column: x => x.ArtistId,
+                        name: "FK_ArtistUser_Artist_ArtistsId",
+                        column: x => x.ArtistsId,
                         principalTable: "Artist",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserArtist_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_ArtistUser_User_UsersId",
+                        column: x => x.UsersId,
                         principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserGenre",
+                name: "GenreUser",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    GenreId = table.Column<int>(type: "int", nullable: false)
+                    GenresId = table.Column<int>(type: "int", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserGenre", x => x.Id);
+                    table.PrimaryKey("PK_GenreUser", x => new { x.GenresId, x.UsersId });
                     table.ForeignKey(
-                        name: "FK_UserGenre_Genre_GenreId",
-                        column: x => x.GenreId,
+                        name: "FK_GenreUser_Genre_GenresId",
+                        column: x => x.GenresId,
                         principalTable: "Genre",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserGenre_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_GenreUser_User_UsersId",
+                        column: x => x.UsersId,
                         principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserSong",
+                name: "SongUser",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    SongId = table.Column<int>(type: "int", nullable: false)
+                    SongsId = table.Column<int>(type: "int", nullable: false),
+                    UsersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserSong", x => x.Id);
+                    table.PrimaryKey("PK_SongUser", x => new { x.SongsId, x.UsersId });
                     table.ForeignKey(
-                        name: "FK_UserSong_Song_SongId",
-                        column: x => x.SongId,
+                        name: "FK_SongUser_Song_SongsId",
+                        column: x => x.SongsId,
                         principalTable: "Song",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserSong_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_SongUser_User_UsersId",
+                        column: x => x.UsersId,
                         principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ArtistUser_UsersId",
+                table: "ArtistUser",
+                column: "UsersId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GenreUser_UsersId",
+                table: "GenreUser",
+                column: "UsersId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Song_ArtistId",
@@ -164,46 +168,21 @@ namespace API.Migrations
                 column: "GenreId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserArtist_ArtistId",
-                table: "UserArtist",
-                column: "ArtistId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserArtist_UserId",
-                table: "UserArtist",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserGenre_GenreId",
-                table: "UserGenre",
-                column: "GenreId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserGenre_UserId",
-                table: "UserGenre",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserSong_SongId",
-                table: "UserSong",
-                column: "SongId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserSong_UserId",
-                table: "UserSong",
-                column: "UserId");
+                name: "IX_SongUser_UsersId",
+                table: "SongUser",
+                column: "UsersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "UserArtist");
+                name: "ArtistUser");
 
             migrationBuilder.DropTable(
-                name: "UserGenre");
+                name: "GenreUser");
 
             migrationBuilder.DropTable(
-                name: "UserSong");
+                name: "SongUser");
 
             migrationBuilder.DropTable(
                 name: "Song");
