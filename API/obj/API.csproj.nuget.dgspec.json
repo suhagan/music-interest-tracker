@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/damianamalraj/Documents/CHAS/3. Backendutveckling och databaser/music-interest-tracker/API/API.csproj": {}
+    "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/API.csproj": {}
   },
   "projects": {
-    "/Users/damianamalraj/Documents/CHAS/3. Backendutveckling och databaser/music-interest-tracker/API/API.csproj": {
+    "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/damianamalraj/Documents/CHAS/3. Backendutveckling och databaser/music-interest-tracker/API/API.csproj",
+        "projectUniqueName": "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/damianamalraj/Documents/CHAS/3. Backendutveckling och databaser/music-interest-tracker/API/API.csproj",
+        "projectPath": "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/API.csproj",
         "packagesPath": "/Users/damianamalraj/.nuget/packages/",
-        "outputPath": "/Users/damianamalraj/Documents/CHAS/3. Backendutveckling och databaser/music-interest-tracker/API/obj/",
+        "outputPath": "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/damianamalraj/.nuget/NuGet/NuGet.Config"
@@ -40,23 +40,27 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.25, )"
+              "version": "[6.0.26, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.26, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.25, )"
+              "version": "[6.0.26, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.26, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
