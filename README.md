@@ -1,5 +1,36 @@
 # Music Interest Tracker
 
+### Endpoints
+
+- `https://localhost:7216/seed` - Seed the database with data from Last.fm
+- `https://localhost:7216/user` - Create a new user
+
+  ```json
+  {
+    "username": "username"
+  }
+  ```
+
+- `https://localhost:7216/users` - Get all users
+- `https://localhost:7216/user/song` - Add a song to a user's list
+- `https://localhost:7216/user/genre` - Add a genre to a user's list
+- `https://localhost:7216/user/artist` - Add an artist to a user's list
+- `https://localhost:7216/user/songs` - Get all songs for a user
+- `https://localhost:7216/user/genres` - Get all genres for a user
+- `https://localhost:7216/user/artists` - Get all artists for a user
+
 ### ER-diagram
 
 ![ER-diagram](./assets/ERD.png)
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
