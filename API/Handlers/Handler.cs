@@ -16,7 +16,8 @@ namespace API.Handlers
 {
   public static class Handler
   {
-    public static async Task<IResult> GetSongs(ApiService apiService, IdbRepository dbRepository)
+    // Adds top 10 songs of Sweden from last.fm to the database
+    public static async Task<IResult> AddSongsFromLastFm(ApiService apiService, IdbRepository dbRepository)
     {
       try
       {
@@ -67,7 +68,7 @@ namespace API.Handlers
           if (user == null)
           {
             await dbRepository.AddUserToDb(body);
-            return Results.Ok("User added");
+            return Results.Ok(body);
           }
           else
           {
@@ -128,7 +129,7 @@ namespace API.Handlers
           {
 
             await dbRepository.ConnectSongToUser(username, song.Title);
-            return Results.Ok("Song added to user");
+            return Results.Ok(body);
           }
           else
           {
@@ -160,7 +161,7 @@ namespace API.Handlers
           if (genre != null)
           {
             await dbRepository.ConnectGenreToUser(username, genre.Title);
-            return Results.Ok("Genre added to user");
+            return Results.Ok(body);
           }
           else
           {
@@ -193,7 +194,7 @@ namespace API.Handlers
           if (artist != null)
           {
             await dbRepository.ConnectArtistToUser(username, artist.Name);
-            return Results.Ok("Artist added to user");
+            return Results.Ok(body);
           }
           else
           {
@@ -273,6 +274,90 @@ namespace API.Handlers
       try
       {
         var artists = await dbRepository.GetArtistsOfUser(username);
+
+        if (artists != null)
+        {
+          var newArtists = artists.Select(a => new ArtistViewModel
+          {
+            Id = a.Id,
+            Name = a.Name,
+          }).ToList();
+
+          return Results.Ok(newArtists);
+        }
+        else
+        {
+          return Results.BadRequest("No artists");
+        }
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e);
+        return Results.StatusCode((int)HttpStatusCode.InternalServerError);
+      }
+    }
+
+    public static async Task<IResult> GetAllSongs(IdbRepository dbRepository)
+    {
+      try
+      {
+        var songs = await dbRepository.GetSongs();
+
+        if (songs != null)
+        {
+          var newSongs = songs.Select(s => new SongViewModel
+          {
+            Id = s.Id,
+            Title = s.Title,
+          }).ToList();
+
+          return Results.Ok(newSongs);
+        }
+        else
+        {
+          return Results.BadRequest("No songs");
+        }
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e);
+        return Results.StatusCode((int)HttpStatusCode.InternalServerError);
+      }
+    }
+
+    public static async Task<IResult> GetAllGenres(IdbRepository dbRepository)
+    {
+      try
+      {
+        var genres = await dbRepository.GetGenres();
+
+        if (genres != null)
+        {
+          var newGenres = genres.Select(g => new GenreViewModel
+          {
+            Id = g.Id,
+            Title = g.Title,
+          }).ToList();
+
+          return Results.Ok(newGenres);
+        }
+        else
+        {
+          return Results.BadRequest("No genres");
+        }
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e);
+        return Results.StatusCode((int)HttpStatusCode.InternalServerError);
+      }
+    }
+
+    public static async Task<IResult> GetAllArtists(IdbRepository dbRepository)
+    {
+      try
+      {
+        var artists = await dbRepository.GetArtists();
 
         if (artists != null)
         {

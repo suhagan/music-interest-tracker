@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,13 +13,11 @@ namespace API.Repositories
 {
   public interface IdbRepository
   {
-    Task<List<User>> GetUsers();
-
     // Add to db methods
-    Task AddSongToDb(Song song, Artist artist, Genre genre);
-    Task AddArtistToDb(Artist artist);
-    Task AddGenreToDb(Genre genre);
     Task AddUserToDb(User user);
+    Task AddSongToDb(Song song, Artist artist, Genre genre);
+    Task AddGenreToDb(Genre genre);
+    Task AddArtistToDb(Artist artist);
 
     Task<User> CheckUserExists(string username);
     Task<Song> CheckSongExists(string title);
@@ -32,6 +31,11 @@ namespace API.Repositories
     Task<ICollection<Song>> GetSongsOfUser(string username);
     Task<ICollection<Genre>> GetGenresOfUser(string username);
     Task<ICollection<Artist>> GetArtistsOfUser(string username);
+
+    Task<ICollection<User>> GetUsers();
+    Task<ICollection<Song>> GetSongs();
+    Task<ICollection<Genre>> GetGenres();
+    Task<ICollection<Artist>> GetArtists();
   }
 
   public class DbRepository : IdbRepository
@@ -154,11 +158,32 @@ namespace API.Repositories
       }
     }
 
-    public async Task<List<User>> GetUsers()
+    public async Task<ICollection<User>> GetUsers()
     {
       var users = await _context.User.ToListAsync();
 
       return users;
+    }
+
+    public async Task<ICollection<Song>> GetSongs()
+    {
+      var songs = await _context.Song.ToListAsync();
+
+      return songs;
+    }
+
+    public async Task<ICollection<Genre>> GetGenres()
+    {
+      var genres = await _context.Genre.ToListAsync();
+
+      return genres;
+    }
+
+    public async Task<ICollection<Artist>> GetArtists()
+    {
+      var artists = await _context.Artist.ToListAsync();
+
+      return artists;
     }
 
     public async Task ConnectSongToUser(string username, string title)
