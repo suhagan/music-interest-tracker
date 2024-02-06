@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Client;
+
+Console.Clear();
+Console.WriteLine("Welcome to Music Intrest Tracker!");
+startingMenuPrompt.startProgram();

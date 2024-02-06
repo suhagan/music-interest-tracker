@@ -15,7 +15,7 @@ builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Populate the database with songs from external API
-app.MapGet("/seed", async (ApiService apiService, IdbRepository dbRepository) => await Handler.GetSongs(apiService, dbRepository));
+app.MapGet("/seed", async (ApiService apiService, IdbRepository dbRepository) => await Handler.AddSongsFromLastFm(apiService, dbRepository));
 
 // Get and add users
 app.MapPost("/user", async (HttpContext httpContext, IdbRepository dbRepository) => await Handler.AddUser(httpContext, dbRepository));
@@ -30,5 +30,10 @@ app.MapPost("{username}/artist", async (HttpContext httpContext, string username
 app.MapGet("{username}/songs", async (string username, IdbRepository dbRepository) => await Handler.GetSongsByUser(username, dbRepository));
 app.MapGet("{username}/genres", async (string username, IdbRepository dbRepository) => await Handler.GetGenresByUser(username, dbRepository));
 app.MapGet("{username}/artists", async (string username, IdbRepository dbRepository) => await Handler.GetArtistsByUser(username, dbRepository));
+
+// Get all songs, genres, artists
+app.MapGet("/songs", async (IdbRepository dbRepository) => await Handler.GetAllSongs(dbRepository));
+app.MapGet("/genres", async (IdbRepository dbRepository) => await Handler.GetAllGenres(dbRepository));
+app.MapGet("/artists", async (IdbRepository dbRepository) => await Handler.GetAllArtists(dbRepository));
 
 app.Run();
