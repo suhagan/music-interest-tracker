@@ -14,7 +14,7 @@ namespace Client.Functions
     {
       try
       {
-        var result = await ApiHelper.Seed();
+        var result = ApiHelper.Seed();
         if (result != null)
         {
           Console.WriteLine("Database seeded successfully!");
@@ -23,6 +23,8 @@ namespace Client.Functions
         {
           Console.WriteLine("Database seeding failed.");
         }
+
+        startingMenuPrompt.startProgram();
       }
       catch (Exception ex)
       {

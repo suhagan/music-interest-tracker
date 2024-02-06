@@ -15,7 +15,7 @@ namespace Client.Utilities
   {
     public static string ApiUrl = "https://localhost:7216";
 
-    public static async Task<List<Song>> Seed()
+    public static async Task Seed()
     {
       try
       {
@@ -28,9 +28,7 @@ namespace Client.Utilities
           if (response.IsSuccessStatusCode)
           {
             var responseData = await response.Content.ReadAsStringAsync();
-            List<Song> songs = JsonConvert.DeserializeObject<List<Song>>(responseData);
 
-            return songs;
           }
           else
           {
@@ -41,7 +39,6 @@ namespace Client.Utilities
       catch (Exception e)
       {
         Console.WriteLine(e.Message);
-        return null;
       }
     }
 
