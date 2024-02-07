@@ -115,3 +115,4 @@
 /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/obj/Debug/net6.0/API.genruntimeconfig.cache
 /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/obj/Debug/net6.0/ref/API.dll
 /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll

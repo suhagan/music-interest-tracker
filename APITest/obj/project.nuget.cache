@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MOCCWk84Yh3NTxPljfMyVFY+B96FPCLmjUb+Aa09PKCF1i5tH5MpT4F4XLL5ohD3U2kuX0av70/zli9f9QJeHw==",
+  "dgSpecHash": "g+YMP3b3EiZZVDcsTjriyOEwGsMW/gXkcSs5H9RZP/mcjuJ9/OlkOrBc9pIFb80WJHL/7/UFmWBuD8PvCk8rwg==",
   "success": true,
   "projectFilePath": "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/APITest/APITest.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore/6.0.26/microsoft.entityframeworkcore.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.26/microsoft.entityframeworkcore.abstractions.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.26/microsoft.entityframeworkcore.analyzers.6.0.26.nupkg.sha512",
+    "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.inmemory/6.0.26/microsoft.entityframeworkcore.inmemory.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.26/microsoft.entityframeworkcore.relational.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.sqlserver/6.0.26/microsoft.entityframeworkcore.sqlserver.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.extensions.caching.abstractions/6.0.0/microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",

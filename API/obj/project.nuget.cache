@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o+US1y9UvFHB6jOXR2svb9HmqVeKHMYNHl/u1PGei6QuRJm81/MGFIk0wsEf5CyIq/CsAFIczl2YtR0ijG10EQ==",
+  "dgSpecHash": "jl0cBaSkEGzijxUiBBiinr0Rz4Z8PS1PYCWk6BDXmF6bkeuoeBoj5NHLQ3p5SoVUONQdjscHhHorkbrIb+1CNg==",
   "success": true,
   "projectFilePath": "/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/API.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.26/microsoft.entityframeworkcore.abstractions.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.26/microsoft.entityframeworkcore.analyzers.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.design/6.0.26/microsoft.entityframeworkcore.design.6.0.26.nupkg.sha512",
+    "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.inmemory/6.0.26/microsoft.entityframeworkcore.inmemory.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.26/microsoft.entityframeworkcore.relational.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.sqlserver/6.0.26/microsoft.entityframeworkcore.sqlserver.6.0.26.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/microsoft.entityframeworkcore.tools/6.0.26/microsoft.entityframeworkcore.tools.6.0.26.nupkg.sha512",
@@ -49,12 +50,5 @@
     "/Users/damianamalraj/.nuget/packages/system.text.encoding.codepages/4.7.0/system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "/Users/damianamalraj/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/API/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

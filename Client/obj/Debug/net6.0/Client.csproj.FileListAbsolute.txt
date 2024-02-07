@@ -56,3 +56,4 @@
 /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/Client/bin/Debug/net6.0/API.dll
 /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/Client/bin/Debug/net6.0/API.pdb
 /Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/Client/obj/Debug/net6.0/Client.csproj.CopyComplete
+/Users/damianamalraj/Documents/CHAS/K3 Backendutveckling och databaser/music-interest-tracker/Client/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll

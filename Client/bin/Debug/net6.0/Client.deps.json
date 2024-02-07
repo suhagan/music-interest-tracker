@@ -99,6 +99,17 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/6.0.26": {},
+      "Microsoft.EntityFrameworkCore.InMemory/6.0.26": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.26"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "6.0.26.0",
+            "fileVersion": "6.0.2623.57013"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/6.0.26": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.26",
@@ -429,6 +440,7 @@
       "API/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.26",
+          "Microsoft.EntityFrameworkCore.InMemory": "6.0.26",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.26",
           "Newtonsoft.Json": "13.0.3"
         },
@@ -485,6 +497,13 @@
       "sha512": "sha512-yW34XFVptV6xMZVCvfnXr/iIc8GJF9NMaM36KeoqOblZZ+l3n9FsdULB5HFQwzqsnz4+X2ttZz1bQoffBVEFfw==",
       "path": "microsoft.entityframeworkcore.analyzers/6.0.26",
       "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.26.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/6.0.26": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YYI8SQf8OU6+MpKcc/nZnh+EMQzlue/qR0S52Z122GAfCQ02rA27rCekbRoAEpicdoHw+6ADSEHzo9PQ6h70nA==",
+      "path": "microsoft.entityframeworkcore.inmemory/6.0.26",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.6.0.26.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.26": {
       "type": "package",
